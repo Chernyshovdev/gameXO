@@ -15,15 +15,15 @@ public class VisualInterface extends JFrame {
     GameEngine gameEngine = new GameEngine();
 
 
-    JButton button1;
-    JButton button2;
-    JButton button3;
-    JButton button4;
-    JButton button5;
-    JButton button6;
-    JButton button7;
-    JButton button8;
-    JButton button9;
+    private JButton button1;
+    private JButton button2;
+    private JButton button3;
+    private JButton button4;
+    private JButton button5;
+    private JButton button6;
+    private JButton button7;
+    private JButton button8;
+    private JButton button9;
 
     public VisualInterface() throws HeadlessException {
         super(TITLE);
