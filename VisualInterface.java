@@ -39,17 +39,24 @@ public class VisualInterface extends JFrame {
     public void buttonLogic(JButton button, int position) {
         if (isEnabled()) {
             String logicResult = String.valueOf(gameEngine.pressButtonLogic(position));
+            Font font = new Font(Font.MONOSPACED, Font.BOLD, 22);
+            button.setFont(font);
+            //button.setForeground(Color.black);
+            //button.setSize(50,50);
             button.setText(logicResult);
             button.setEnabled(false);
             if (gameEngine.isWin()) {
                 if (gameEngine.isPress()) {
                     JOptionPane.showMessageDialog(new JFrame(), "P1 win");
+                    dispose();
                 } else {
                     JOptionPane.showMessageDialog(new JFrame(), "P2 win");
+                    dispose();
                 }
             }
             if (gameEngine.isDraw()) {
                 JOptionPane.showMessageDialog(new JFrame(), "Game ended in a draw");
+                dispose();
             }
 
         }
