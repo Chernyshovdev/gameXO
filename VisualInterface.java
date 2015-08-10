@@ -33,30 +33,31 @@ public class VisualInterface extends JFrame {
     public void init() {
         setSize(600, 400);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         setupButton();
     }
 
     public void buttonLogic(JButton button, int position) {
         if (isEnabled()) {
             String logicResult = String.valueOf(gameEngine.pressButtonLogic(position));
-            Font font = new Font(Font.MONOSPACED, Font.BOLD, 22);
+            Font font = new Font(Font.MONOSPACED, Font.BOLD, 40);
             button.setFont(font);
-            //button.setForeground(Color.black);
-            //button.setSize(50,50);
+            //button.setForeground(Color.black);dont work if setEnable false
             button.setText(logicResult);
             button.setEnabled(false);
+
             if (gameEngine.isWin()) {
                 if (gameEngine.isPress()) {
                     JOptionPane.showMessageDialog(new JFrame(), "P1 win");
-                    dispose();
+                    System.exit(0);
                 } else {
                     JOptionPane.showMessageDialog(new JFrame(), "P2 win");
-                    dispose();
+                    System.exit(0);
                 }
             }
             if (gameEngine.isDraw()) {
                 JOptionPane.showMessageDialog(new JFrame(), "Game ended in a draw");
-                dispose();
+                System.exit(0);
             }
 
         }
