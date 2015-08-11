@@ -23,6 +23,7 @@ public class VisualInterface extends JFrame {
     private JButton button7;
     private JButton button8;
     private JButton button9;
+    MyListener listener = new MyListener();
 
     public VisualInterface() throws HeadlessException {
         super(TITLE);
@@ -68,87 +69,75 @@ public class VisualInterface extends JFrame {
         buttonPanel.setBackground(Color.LIGHT_GRAY);
 
         button1 = new JButton();
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonLogic(button1, 0);
-            }
-        });
+        button1.addActionListener(listener);
 //        button1.setBackground(Color.green);
 //        button1.setOpaque(true);
         buttonPanel.add(button1);
 
         button2 = new JButton();
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonLogic(button2, 1);
-            }
-        });
+        button2.addActionListener(listener);
         buttonPanel.add(button2);
 
         button3 = new JButton();
-        button3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonLogic(button3, 2);
-            }
-        });
+        button3.addActionListener(listener);
         buttonPanel.add(button3);
 
         button4 = new JButton();
-        button4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonLogic(button4, 3);
-            }
-        });
+        button4.addActionListener(listener);
+
         buttonPanel.add(button4);
 
         button5 = new JButton();
-        button5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonLogic(button5, 4);
-            }
-        });
+        button5.addActionListener(listener);
         buttonPanel.add(button5);
 
         button6 = new JButton();
-        button6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonLogic(button6, 5);
-            }
-        });
+        button6.addActionListener(listener);
         buttonPanel.add(button6);
 
         button7 = new JButton();
-        button7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonLogic(button7, 6);
-            }
-        });
+        button7.addActionListener(listener);
         buttonPanel.add(button7);
 
         button8 = new JButton();
-        button8.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonLogic(button8, 7);
-            }
-        });
+        button8.addActionListener(listener);
         buttonPanel.add(button8);
 
         button9 = new JButton();
-        button9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonLogic(button9, 8);
-            }
-        });
+        button9.addActionListener(listener);
         buttonPanel.add(button9);
     }
 
+    private class MyListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==button1){
+                buttonLogic(button1,0);
+            }
+            else if(e.getSource()==button2){
+                buttonLogic(button2,1);
+            }
+            else  if(e.getSource()==button3){
+                buttonLogic(button3,2);
+            }
+            else  if(e.getSource()==button4){
+                buttonLogic(button4,3);
+            }
+            else  if(e.getSource()==button5){
+                buttonLogic(button5,4);
+            }
+            else  if(e.getSource()==button6){
+                buttonLogic(button6,5);
+            }
+            else  if(e.getSource()==button7){
+                buttonLogic(button7,6);
+            }
+            else  if(e.getSource()==button8){
+                buttonLogic(button8,7);
+            }
+            else  if(e.getSource()==button9){
+                buttonLogic(button9,8);
+            }
+        }
+    }
 }

@@ -1,6 +1,5 @@
 package homework7.gameXO;
 
-import javax.swing.*;
 
 /**
  * Created by Razer on 09.08.15.
@@ -28,6 +27,7 @@ public class GameEngine {
     }
 
     public boolean isWin() {
+        count++;
         if ((array[0] == array[1]) && (array[1] == array[2]) && array[0] != '\u0000') {
             return true;
         } else if ((array[3] == array[4]) && (array[4] == array[5]) && array[3] != '\u0000') {
