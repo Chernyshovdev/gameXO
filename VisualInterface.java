@@ -14,7 +14,6 @@ public class VisualInterface extends JFrame {
     private static final String TITLE = "Game";
     GameEngine gameEngine = new GameEngine();
 
-
     private JButton button1;
     private JButton button2;
     private JButton button3;
