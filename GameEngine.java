@@ -13,14 +13,14 @@ public class GameEngine {
     }
 
     public char pressButtonLogic(int position) {
-        count++;
         char result;
         if (count%2==0) {
-            result = '0';
-        } else {
             result = 'X';
+        } else {
+            result = '0';
         }
         array[position] = result;
+        count++;
         return result;
     }
 
