@@ -47,7 +47,7 @@ public class VisualInterface extends JFrame {
             button.setEnabled(false);
 
             if (gameEngine.isWin()) {
-                if (gameEngine.isPress()) {
+                if (gameEngine.getCount()%2==0) {
                     JOptionPane.showMessageDialog(new JFrame(), "P1 win");
                     System.exit(0);
                 } else {
@@ -55,7 +55,7 @@ public class VisualInterface extends JFrame {
                     System.exit(0);
                 }
             }
-            if (gameEngine.isDraw()) {
+            else if (gameEngine.isDraw()) {
                 JOptionPane.showMessageDialog(new JFrame(), "Game ended in a draw");
                 System.exit(0);
             }

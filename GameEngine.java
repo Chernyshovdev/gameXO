@@ -5,29 +5,26 @@ package homework7.gameXO;
  * Created by Razer on 09.08.15.
  */
 public class GameEngine {
-    private boolean isPress;
     private char array[] = new char[9];
     private int count = 0;
 
-    public boolean isPress() {
-        return isPress;
+    public int getCount() {
+        return count;
     }
 
     public char pressButtonLogic(int position) {
+        count++;
         char result;
-        if (isPress) {
+        if (count%2==0) {
             result = '0';
-            isPress = false;
         } else {
             result = 'X';
-            isPress = true;
         }
         array[position] = result;
         return result;
     }
 
     public boolean isWin() {
-        count++;
         if ((array[0] == array[1]) && (array[1] == array[2]) && array[0] != '\u0000') {
             return true;
         } else if ((array[3] == array[4]) && (array[4] == array[5]) && array[3] != '\u0000') {
